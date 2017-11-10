@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from tempfile import TemporaryFile
 from datetime import datetime
 import pandas
+from sklearn.naive_bayes import MultinomialNB
+
 
 # Splits the data according to their label.
 # Returns Y where 1 represents a chargeback transaction, 0 a settled transaction and -1 a refused transaction.
@@ -54,11 +56,14 @@ def split(X):
 
 # Perform Naive bayes on all discrete variables.
 def naive_bayes(X, Y):
+    clf = MultinomialNB()
+    clf.fit(X, Y)
     return
 
 # Perform simple logistic regression on all continuous variables.
 def simple_logistic(X, Y):
     return
+
 # Initial naive analysis. We train two models, one with continous and one with
 # Discrete variables.
 def naive_analysis(X, Y):
@@ -68,10 +73,39 @@ def naive_analysis(X, Y):
     simple_logistic(X_continuous, Y)
     return
 
+
+# Randomly the data into train, dev and test sets of size 'train_size', 'dev_size' and the remainder.
+# Returns all six arrays.
+def split_train_dev_test(X, Y, train_size, dev_size):
+    total_indices = list(range(len(X)))
+    no_train_samples = int(len(X) * train_size)
+    no_dev_samples = int(len(X) * dev_size)
+
+    train_indices = np.sort(np.random.choice(total_indices, no_train_samples, replace=False))
+    temp = np.delete(total_indices, train_indices)
+    dev_indices = np.random.choice(temp, no_dev_samples, replace=False)
+    test_indices = np.delete(temp, dev_indices)
+
+    X_train = [X[i] for i in train_indices]
+    Y_train = [Y[i] for i in train_indices]
+
+    X_dev = [X[i] for i in dev_indices]
+    Y_dev = [Y[i] for i in dev_indices]
+
+    X_test = [X[i] for i in test_indices]
+    Y_test = [Y[i] for i in test_indices]
+
+    return X_train, Y_train, X_dev, Y_dev, X_test, Y_test
+
+
+
+
 # Main method
 def main():
     X, Y = read_data()
-    naive_analysis(X, Y)
+    X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
+
+    naive_analysis(X_train, Y_train)
     return
 
 
