@@ -1,2 +1,3 @@
-﻿1,09/11/2015 14:26,MX,mccredit,530056,64800,MXN,MX,Ecommerce,Chargeback,TRUE,0,01/07/2015 23:03,MexicoAccount,email68370,ip111778,card184798
-1,09/11/2015 14:26,MX,mccredit,530056,64800,MXN,MX,Ecommerce,Chargeback,TRUE,0,01/07/2015 23:03,MexicoAccount,email68370,ip111778,card184798
+txid,bookingdate,issuercountrycode,txvariantcode,bin,amount,currencycode,shoppercountrycode,shopperinteraction,simple_journal,cardverificationcodesupplied,cvcresponsecode,creationdate,accountcode,mail_id,ip_id,card_id
+111,09/11/2015 14:26,MX,mccredit,530056,64800,MXN,MX,Ecommerce,Chargeback,TRUE,0,01/07/2015 23:03,MexicoAccount,email68370,ip111778,card184798
+bla,,,,,,,,,,,,,,,,
