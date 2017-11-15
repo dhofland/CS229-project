@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import pandas
 from sklearn import svm
 from sklearn.naive_bayes import MultinomialNB
-from sklearn import preprocessing, linear_model
-from sklearn import neural_network
+from sklearn import preprocessing, linear_model, neural_network
+from sklearn.preprocessing import StandardScaler
 
 # Splits the data according to their label.
 # Returns Y where 1 represents a chargeback transaction, 0 a settled transaction and -1 a refused transaction.
@@ -109,6 +109,12 @@ def label(le, X):
             X[i] = temp
     return np.transpose(X)
 
+def label_X(X_train, X_dev, X_test):
+    le = preprocessing.LabelEncoder()
+    X_train = label(le, X_train)
+    X_dev = label(le, X_dev)
+    X_test = label(le, X_test)
+    return X_train, X_dev, X_test
 
 # Test predicted Y against actual Y of model_type (e.g. logistic) and set_type (e.g. train/dev)
 # (Old labelling scheme)
@@ -207,14 +213,14 @@ def logistic_classifier(X_train, Y_train, X_dev, Y_dev):
     classifier = simple_classifier(linear_model.LogisticRegression(class_weight='balanced'),
                                    X_train_filtered, Y_train, X_dev_filtered, Y_dev, 'Logistic')
     plot_against_names(classifier.coef_[0], 'logistic_thetas_weighted_filtered.png', names=names_filtered)
-    return
+    return classifier, significant_cols
 
 def simple_SVM_classifier(X_train, Y_train, X_dev, Y_dev):
-    classifier = simple_classifier(svm.LinearSVC(class_weight='balanced'), X_train, Y_train, X_dev, Y_dev, 'SVM')
-    return
+    return simple_classifier(svm.LinearSVC(class_weight='balanced'), X_train, Y_train, X_dev, Y_dev, 'SVM')
+
 
 def simple_nn_classifier(X_train, Y_train, X_dev, Y_dev):
-    simple_classifier(neural_network.MLPClassifier(activation='logistic'), X_train, Y_train, X_dev, Y_dev, 'NN')
+    simple_classifier(neural_network.MLPClassifier(), X_train, Y_train, X_dev, Y_dev, 'NN')
     return
 
 # Default classifier method that fits the training set to the classifier, generates a prediction
@@ -224,7 +230,7 @@ def simple_classifier(classifier, X_train, Y_train, X_dev, Y_dev, classifier_typ
     prediction_training = classifier.predict(X_train)
     test2(prediction_training, Y_train, classifier_type, 'Training')
     prediction_dev = classifier.predict(X_dev)
-    uniques = np.unique(prediction_dev)
+    # uniques = np.unique(prediction_dev)
     # print('Unique elements found:', uniques)
     test2(prediction_dev, Y_dev, classifier_type, 'Dev')
     return classifier
@@ -234,15 +240,42 @@ def simple_classifier(classifier, X_train, Y_train, X_dev, Y_dev, classifier_typ
 def naive_analysis(X, Y):
     X, Y = filter_refused_transactions(X, Y)
     X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
+    X_train, X_dev, X_test = label_X(X_train, X_dev, X_test)
 
-    le = preprocessing.LabelEncoder()
-    X_train = label(le, X_train)
-    X_dev = label(le, X_dev)
+    naive_bayes_classifier(X_train, Y_train, X_dev, Y_dev)
+    classifier, significant_cols = logistic_classifier(X_train, Y_train, X_dev, Y_dev)
+    simple_SVM_classifier(X_train, Y_train, X_dev, Y_dev)
+    simple_nn_classifier(X_train, Y_train, X_dev, Y_dev)
 
-    # naive_bayes_classifier(X_train, Y_train, X_dev, Y_dev)
-    logistic_classifier(X_train, Y_train, X_dev, Y_dev)
-    # simple_SVM_classifier(X_train, Y_train, X_dev, Y_dev)
-    # simple_nn_classifier(X_train, Y_train, X_dev, Y_dev)
+    # X_test = filter_out_columns(X_test, significant_cols)
+    # prediction_test = classifier.predict(X_test)
+    # test2(prediction_test, Y_test, 'Logistic', 'Test')
+    return
+
+def scale(X_train, X_dev, X_test):
+    scaler = StandardScaler()
+    scaler.fit(X_train)
+    X_train = scaler.transform(X_train)
+    X_dev = scaler.transform(X_dev)
+    X_test = scaler.transform(X_test)
+    return X_train, X_dev, X_test
+
+def modified_classifiers(X, Y):
+    X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
+
+    X_train, X_dev, X_test = label_X(X_train, X_dev, X_test)
+    X_train, X_dev, X_test = scale(X_train, X_dev, X_test)
+    classifier = simple_classifier(neural_network.MLPClassifier(solver='adam', activation='relu', verbose=True,
+                                                   hidden_layer_sizes=(100,)),
+                      X_train, Y_train, X_dev, Y_dev, 'NN')
+    test2(classifier.predict(X_test), Y_test, 'NN', 'Test')
+
+    classes, counts = np.unique(Y, return_counts=True);
+    weights = np.divide(counts, len(Y))
+
+    # SVM with scaled values also gives good results
+    classifier = simple_SVM_classifier(X_train, Y_train, X_dev, Y_dev)
+    test2(classifier.predict(X_test), Y_test, 'SVM', 'Test')
     return
 
 
@@ -272,7 +305,8 @@ def split_train_dev_test(X, Y, train_size, dev_size):
 # Main method
 def main():
     X, Y = read_data()
-    naive_analysis(X, Y)
+    # naive_analysis(X, Y)
+    modified_classifiers(X, Y)
     return
 
 main()
