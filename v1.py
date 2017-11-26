@@ -261,6 +261,7 @@ def scale(X_train, X_dev, X_test):
     return X_train, X_dev, X_test
 
 def modified_classifiers(X, Y):
+    # X, Y = filter_refused_transactions(X, Y)
     X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
 
     X_train, X_dev, X_test = label_X(X_train, X_dev, X_test)
@@ -270,9 +271,8 @@ def modified_classifiers(X, Y):
                       X_train, Y_train, X_dev, Y_dev, 'NN')
     test2(classifier.predict(X_test), Y_test, 'NN', 'Test')
 
-    classes, counts = np.unique(Y, return_counts=True);
-    weights = np.divide(counts, len(Y))
-
+    # classes, counts = np.unique(Y, return_counts=True);
+    # weights = np.divide(counts, len(Y))
     # SVM with scaled values also gives good results
     classifier = simple_SVM_classifier(X_train, Y_train, X_dev, Y_dev)
     test2(classifier.predict(X_test), Y_test, 'SVM', 'Test')
@@ -305,7 +305,7 @@ def split_train_dev_test(X, Y, train_size, dev_size):
 # Main method
 def main():
     X, Y = read_data()
-    # naive_analysis(X, Y)
+    naive_analysis(X, Y)
     modified_classifiers(X, Y)
     return
 
