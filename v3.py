@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas
 import math
 import sklearn
+import tensorflow as tf
 from scipy.special import expit
 from sklearn import svm, metrics
 from sklearn.naive_bayes import MultinomialNB
@@ -538,6 +539,81 @@ def feature_expansion(X, Y):
 
 
 
+def tensorFlow(X, Y):
+    X, Y = filter_refused_transactions(X, Y)
+    X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
+    X_train, X_dev, X_test = label_X(X_train, X_dev, X_test)
+    X_train, X_dev, X_test = scale(X_train, X_dev, X_test)
+
+    seed = 128
+    rng = np.random.RandomState(seed)
+
+    hidden1_units = 100
+    output_unites = 1
+    (m, n) = len(X_train)
+
+    inputs_placeholder = tf.placeholder(tf.float32, [None, n])
+    labels_placeholder = tf.placeholder(tf.float32, [None, output_unites])
+
+    epochs = 50
+    batch_size = 1000
+    learning_rate = 0.05
+
+    weights = {
+        'hidden': tf.Variable(tf.random_normal([n, hidden1_units], seed=seed)),
+        'output': tf.Variable(tf.random_normal([hidden1_units, output_unites], seed=seed))
+    }
+
+    biases = {
+        'hidden': tf.Variable(tf.random_normal([hidden1_units], seed=seed)),
+        'output': tf.Variable(tf.random_normal([output_unites], seed=seed))
+    }
+
+    hidden_layer = tf.add(tf.matmul(inputs_placeholder, weights['hidden']), biases['hidden'])
+    hidden_layer = tf.nn.relu(hidden_layer)
+
+    output_layer = tf.matmul(hidden_layer, weights['output']) + biases['output']
+
+    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output_layer, labels_placeholder))
+
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+    init = tf.initialize_all_variables()
+
+    with tf.Session() as sess:
+        # create initialized variables
+        sess.run(init)
+
+        ### for each epoch, do:
+        ###   for each batch, do:
+        ###     create pre-processed batch
+        ###     run optimizer by feeding batch
+        ###     find cost and reiterate to minimize
+
+        for epoch in range(epochs):
+            avg_cost = 0
+            total_batch = int(X_train.shape[0] / batch_size)
+            for i in range(total_batch):
+                batch_x, batch_y = batch_creator(batch_size, X_train.shape[0], 'train')
+                _, c = sess.run([optimizer, cost], feed_dict={inputs_placeholder: batch_x, labels_placeholder: batch_y})
+
+                avg_cost += c / total_batch
+
+            print
+            "Epoch:", (epoch + 1), "cost =", "{:.5f}".format(avg_cost)
+
+        print
+        "\nTraining complete!"
+
+        # find predictions on val set
+        pred_temp = tf.equal(tf.argmax(output_layer, 1), tf.argmax(y, 1))
+        accuracy = tf.reduce_mean(tf.cast(pred_temp, "float"))
+        print
+        "Validation Accuracy:", accuracy.eval({x: val_x.reshape(-1, input_num_units), y: dense_to_one_hot(val_y)})
+
+        predict = tf.argmax(output_layer, 1)
+        pred = predict.eval({x: test_x.reshape(-1, input_num_units)})
+
 
 
 # Main method
@@ -546,8 +622,9 @@ def main():
     # naive_analysis(X, Y)
     # modified_classifiers(X, Y)
     #feature_select(X, Y)
-    feature_expansion(X, Y)
+    # feature_expansion(X, Y)
     # supervised_learning(X, Y)
+    tensorFlow(X, Y)
     return
 
 main()
