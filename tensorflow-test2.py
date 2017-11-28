@@ -197,7 +197,7 @@ rng = np.random.RandomState(seed)
 
 # Calculates output of the NN. Effectively performs the forward computations
 # Implementation with a single layer
-def multilayer_perceptron(x, weights, biases, keep_prob):
+def multilayer_perceptron_one_layer(x, weights, biases, keep_prob):
     layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
     layer_1 = tf.nn.relu(layer_1)
     layer_1 = tf.nn.dropout(layer_1, keep_prob)
@@ -205,7 +205,7 @@ def multilayer_perceptron(x, weights, biases, keep_prob):
     return out_layer
 
 # Two-layer perceptron
-def multilayer_perceptron2(x, weights, biases, keep_prob):
+def multilayer_perceptron_two_layer(x, weights, biases, keep_prob):
     layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
     layer_1 = tf.nn.relu(layer_1)
     layer_1 = tf.nn.dropout(layer_1, keep_prob)
@@ -213,6 +213,20 @@ def multilayer_perceptron2(x, weights, biases, keep_prob):
     layer_2 = tf.nn.relu(layer_2)
     layer_2 = tf.nn.dropout(layer_2, keep_prob)
     out_layer = tf.matmul(layer_2, weights['out']) + biases['out']
+    return out_layer
+
+# Three-layer perceptron
+def multilayer_perceptron_three_layer(x, weights, biases, keep_prob):
+    layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
+    layer_1 = tf.nn.relu(layer_1)
+    layer_1 = tf.nn.dropout(layer_1, keep_prob)
+    layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
+    layer_2 = tf.nn.relu(layer_2)
+    layer_2 = tf.nn.dropout(layer_2, keep_prob)
+    layer_3 = tf.add(tf.matmul(layer_1, weights['h3']), biases['b3'])
+    layer_3 = tf.nn.relu(layer_3)
+    layer_3 = tf.nn.dropout(layer_3, keep_prob)
+    out_layer = tf.matmul(layer_3, weights['out']) + biases['out']
     return out_layer
 
 def encode(series):
@@ -323,6 +337,21 @@ def run_epoch3(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, ke
         avg_cost += c / total_batch
     return avg_cost
 
+def run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob, freq_frauds):
+    avg_cost = 0.0
+    total_batch = int(len(X_train) / batch_size)
+    x_batches, y_batches = sample_batches(X_train, Y_traintemp, batch_size, freq_frauds)
+    for i in range(total_batch):
+        batch_x, batch_y = x_batches[i], y_batches[i]
+        _, c = sess.run([optimizer, cost],
+                        feed_dict={
+                            x: batch_x,
+                            y: batch_y,
+                            keep_prob: 1
+                        })
+        avg_cost += c / total_batch
+    return avg_cost
+
 # Filters all but specified columns from X
 def filter_out_columns(X, columns_to_keep):
     X = np.transpose(X)
@@ -341,23 +370,52 @@ def tensorFlow(X, Y):
     X_train = filter_out_columns(X_train, [2, 3, 14, 16])
     X_dev = filter_out_columns(X_dev, [2,3,14,16])
 
+    poly = PolynomialFeatures(2)
+    X_train = poly.fit_transform(X_train)
+    X_dev = poly.fit_transform(X_dev)
+
     Y_traintemp =  encode(Y_train)
 
     (m, n) = X_train.shape
     n_hidden_1 = 500
     n_hidden_2 = 10
+    n_hidden_3 = 500
     n_input = X_train.shape[1]
     n_classes = Y_traintemp.shape[1]
 
-    weights = {
+    weights_one_layer = {
+        'h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
+        'out': tf.Variable(tf.random_normal([n_hidden_1, n_classes]))
+    }
+
+    weights_two_layer = {
         'h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
         'h2': tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
         'out': tf.Variable(tf.random_normal([n_hidden_2, n_classes]))
     }
 
-    biases = {
+    weights_three_layer = {
+        'h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
+        'h2': tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
+        'h3': tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3])),
+        'out': tf.Variable(tf.random_normal([n_hidden_3, n_classes]))
+    }
+
+    biases_one_layer = {
+        'b1': tf.Variable(tf.random_normal([n_hidden_1])),
+        'out': tf.Variable(tf.random_normal([n_classes]))
+    }
+
+    biases_two_layer = {
         'b1': tf.Variable(tf.random_normal([n_hidden_1])),
         'b2': tf.Variable(tf.random_normal([n_hidden_2])),
+        'out': tf.Variable(tf.random_normal([n_classes]))
+    }
+
+    biases_three_layer = {
+        'b1': tf.Variable(tf.random_normal([n_hidden_1])),
+        'b2': tf.Variable(tf.random_normal([n_hidden_2])),
+        'b3': tf.Variable(tf.random_normal([n_hidden_3])),
         'out': tf.Variable(tf.random_normal([n_classes]))
     }
 
@@ -365,43 +423,29 @@ def tensorFlow(X, Y):
 
     display_step = 1
     batch_size = 5000
-    tolerance = 1e-2
+    tolerance = 1e-3
     learning_rate = 0.05
     alpha = 0.001
+
+    freq_frauds = 0.5
 
     x = tf.placeholder("float", [None, n_input])
     y = tf.placeholder("float", [None, n_classes])
 
-    # predictions = multilayer_perceptron(x, weights, biases, keep_prob)
-    predictions = multilayer_perceptron2(x, weights, biases, keep_prob)
-
-    unique, counts = np.unique(Y_train, return_counts=True)
-    weight_settled = counts[1] / len(Y_train)
-    weights_fraud = (counts[0] / len(Y_train))
-
-    # weights_fraud = 1.0
-    # weight_settled = 1.0
-
-    freq_array = [weight_settled]*len(Y_train)
-    for i in range(len(Y_train)):
-        if(Y_train[i] == 1):
-            freq_array[i] = weights_fraud
-
-    freq_array = np.divide(freq_array, sum(freq_array))
+    # predictions = multilayer_perceptron_one_layer(x, weights_one_layer, biases_one_layer, keep_prob)
+    # predictions = multilayer_perceptron_two_layer(x, weights_two_layer, biases_two_layer, keep_prob)
+    predictions = multilayer_perceptron_three_layer(x, weights_three_layer, biases_three_layer, keep_prob)
 
 
-    # classes_weights = tf.constant([counts[1]/len(Y_train)*100, counts[1]/len(Y_train)])
+    weights_fraud = 1/freq_frauds
+    weight_settled = 1/(1-freq_frauds)
+
     classes_weights = tf.constant([weight_settled, weights_fraud])
 
 
     vars = tf.trainable_variables()
     L2loss = tf.add_n([tf.nn.l2_loss(v) for v in vars]) * alpha
-    # cost = tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=predictions, targets=y, pos_weight=classes_weights)
-    #                       + L2loss)
-
-    cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=predictions, labels=y) + L2loss)
-    # cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=predictions, labels=y))
-
+    cost = tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=predictions, targets=y, pos_weight=classes_weights) + L2loss)
 
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
 
@@ -411,8 +455,9 @@ def tensorFlow(X, Y):
         prev_cost = 0.0
         epoch = 0
         while(True):
-            avg_cost = run_epoch2(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob)
+            # avg_cost = run_epoch2(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob)
             # avg_cost = run_epoch3(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_array)
+            avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds)
             if epoch % display_step == 0:
                 print("Epoch:", '%04d' % (epoch + 1), "cost=", \
                       "{:.9f}".format(avg_cost))
@@ -438,8 +483,6 @@ def tensorFlow(X, Y):
 def main():
     X, Y = read_data()
     tensorFlow(X, Y)
-
-
     return
 
 main()
