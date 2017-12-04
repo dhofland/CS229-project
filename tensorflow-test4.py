@@ -209,6 +209,13 @@ def test3(prediction, Y, model_type, set_type):
 seed = 128
 rng = np.random.RandomState(seed)
 
+def label_X(X_train, X_dev, X_test):
+    le = preprocessing.LabelEncoder()
+    X_train = label(le, X_train)
+    X_dev = label(le, X_dev)
+    X_test = label(le, X_test)
+    return X_train, X_dev, X_test
+
 
 # Calculates output of the NN. Effectively performs the forward computations
 # Implementation with a single layer
@@ -364,6 +371,7 @@ def tensorFlow(X, Y):
 
         prev_cost = 0.0
         epoch = 0
+        writer = tf.summary.FileWriter('logs', sess.graph)
         while(True):
             avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds)
             if epoch % display_step == 0:
@@ -377,7 +385,7 @@ def tensorFlow(X, Y):
         print("Optimization Finished!")
         correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-
+        writer.close()
         print("Training Accuracy:", accuracy.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0}))
         results = correct_prediction.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0})
         test3(results, Y_train, "NN", 'Train')
