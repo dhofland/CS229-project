@@ -214,6 +214,7 @@ def multilayer_perceptron_two_layer(x, weights, biases, keep_prob):
     layer_2 = tf.nn.relu(layer_2)
     layer_2 = tf.nn.dropout(layer_2, keep_prob)
     out_layer = tf.matmul(layer_2, weights['out']) + biases['out']
+    out_layer = tf.sigmoid(out_layer)
     return out_layer
 
 # Three-layer perceptron
@@ -234,8 +235,6 @@ def encode(series):
   return pandas.get_dummies(series.astype(str))
 
 def test3(prediction, Y, model_type, set_type):
-
-
     fraud_found = 0
     non_fraud_found = 0
 
@@ -280,20 +279,20 @@ def run_epoch1(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, ke
 # Selects batches by making sure that they always contain a fixed number of fraud-cases
 # i.e. prob_of_fraud times batch size
 def sample_batches(X, Y, batch_size, prob_of_fraud):
-    fraud_indices_list = np.where(Y == 1)[0]
-    non_fraud_indices_list = np.where(Y == -1)[0]
+    fraud_indices_list = np.where(Y == -1)[0]
+    non_fraud_indices_list = np.where(Y == 1)[0]
 
     num_frauds = round(prob_of_fraud * batch_size)
     num_non_frauds = batch_size - num_frauds
 
-    # total_batch = int(len(non_fraud_indices_list) / num_non_frauds)
+    total_batch = int(len(non_fraud_indices_list) / num_non_frauds)
     number_batches = int(len(X) / batch_size)
 
 
     X_batches = []
     Y_batches = []
 
-    # non_fraud_indices = np.array_split(non_fraud_indices, total_batch)
+    # non_fraud_indices = np.array_split(non_fraud_indices_list, total_batch)
 
     for i in range(number_batches):
         fraud_indices = np.random.choice(fraud_indices_list, num_frauds)
@@ -305,6 +304,28 @@ def sample_batches(X, Y, batch_size, prob_of_fraud):
         Y_batches.append(Y_batch)
 
     return X_batches, Y_batches
+    # fraud_indices_list = np.where(Y == -1)[0]
+    # non_fraud_indices = np.where(Y == 1)[0]
+    #
+    # num_frauds = round(prob_of_fraud * batch_size)
+    # num_non_frauds = batch_size - num_frauds
+    #
+    # total_batch = int(len(non_fraud_indices) / num_non_frauds)
+    #
+    # X_batches = []
+    # Y_batches = []
+    #
+    # non_fraud_indices = np.array_split(non_fraud_indices, total_batch)
+    #
+    # for i in range(total_batch):
+    #     fraud_indices = np.random.choice(fraud_indices_list, num_frauds)
+    #     X_batch = np.append(np.take(X, fraud_indices, axis=0), np.take(X, non_fraud_indices[i], axis=0), axis=0)
+    #     Y_batch = np.append(np.take(Y, fraud_indices), np.take(Y, non_fraud_indices[i]))
+    #     Y_batch = encode(Y_batch)
+    #     X_batches.append(X_batch)
+    #     Y_batches.append(Y_batch)
+    #
+    # return X_batches, Y_batches
 
 def run_epoch2(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob):
     avg_cost = 0.0
@@ -377,23 +398,24 @@ def FN_cost(predictions, targets, L2loss, gamma, alpha):
     # return tf.reduce_mean(cost)
 
 
-    temp = tf.subtract(1.0, predictions)
-    # temp = tf.pow(temp, gamma)
-    # temp = tf.multiply(temp, targets)
-    # temp = tf.multiply(temp, alpha[0])
-    # temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
-    # temp = tf.multiply(temp, -1.0)
-    #
-    # temp2 = tf.pow(predictions, gamma)
-    # temp2 = tf.multiply(temp2, alpha[1])
-    # temp2 = tf.multiply(temp2, tf.subtract(1.0, targets))
-    # temp2 = tf.multiply(temp2, tf.log(tf.subtract(1.0, tf.clip_by_value(predictions,1e-10,1.0))))
-    # temp2 = tf.multiply(temp2, -1.0)
-    #
-    # cost = tf.add(temp, temp2)
-    # cost = tf.add(cost, L2loss)
+    temp = tf.subtract(tf.constant(1.0), predictions)
+    temp = tf.pow(temp, gamma)
+    temp = tf.multiply(temp, targets)
+    temp = tf.multiply(temp, tf.constant(alpha[1]))
+    temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
+    temp = tf.multiply(temp, tf.constant(-1.0))
 
-    return temp
+    temp2 = tf.pow(predictions, gamma)
+    temp2 = tf.multiply(temp2, tf.constant(alpha[0]))
+    temp2 = tf.multiply(temp2, tf.subtract(tf.constant(1.0), targets))
+    temp3 = tf.clip_by_value(tf.subtract(tf.constant(1.0), predictions),1e-10,1.0)
+    temp2 = tf.multiply(temp2, tf.log(temp3))
+    temp2 = tf.multiply(temp2, tf.constant(-1.0))
+
+    cost = tf.add(temp, temp2)
+    cost = tf.add(cost, L2loss)
+
+    return tf.reduce_mean(cost)
 
 # https://medium.com/@curiousily/tensorflow-for-hackers-part-ii-building-simple-neural-network-2d6779d2f91b
 def tensorFlow(X, Y):
@@ -405,14 +427,14 @@ def tensorFlow(X, Y):
     X_train = filter_out_columns(X_train, [2, 3, 14, 16])
     X_dev = filter_out_columns(X_dev, [2,3,14,16])
 
-    # poly = PolynomialFeatures(2)
-    # X_train = poly.fit_transform(X_train)
-    # X_dev = poly.fit_transform(X_dev)
+    poly = PolynomialFeatures(2)
+    X_train = poly.fit_transform(X_train)
+    X_dev = poly.fit_transform(X_dev)
 
     Y_traintemp =  encode(Y_train)
 
     (m, n) = X_train.shape
-    n_hidden_1 = 500
+    n_hidden_1 = 1000 #baseline: 500
     n_hidden_2 = 10
     n_hidden_3 = 500
     n_input = X_train.shape[1]
@@ -458,12 +480,12 @@ def tensorFlow(X, Y):
 
     display_step = 1
     batch_size = 5000
-    tolerance = 1e-1
-    learning_rate = 0.05
-    alpha = 0.001
-    gamma = 2
+    tolerance = 1e-2
+    learning_rate = 0.05 #baseline: 0.05
+    alpha_reg = 0.002 #baseline: 0.001
+    gamma = 5.0 #baseline: 2
 
-    freq_frauds = 0.25
+    freq_frauds = 0.5 #baseline: 0.5
 
     x = tf.placeholder("float", [None, n_input])
     y = tf.placeholder("float", [None, n_classes])
@@ -476,15 +498,25 @@ def tensorFlow(X, Y):
     weights_fraud = 1/freq_frauds
     weight_settled = 1/(1-freq_frauds)
 
-    alpha = [weights_fraud, weight_settled]
+    # unique, counts = np.unique(Y_train, return_counts=True)
+    # weight_settled = counts[1] / len(Y_train)
+    # weights_fraud = (counts[0] / len(Y_train))
+
+    alpha = [np.float32(weights_fraud), np.float32(weight_settled)]
+    # alpha = [1.0, 1.0]
+    # alpha = [1-freq_frauds, freq_frauds]
     # classes_weights = tf.constant([weight_settled, weights_fraud])
     # FN_weights = tf.Variable([tf.pow((1-predictions), gamma), tf.pow(predictions, gamma)])
 
     vars = tf.trainable_variables()
-    L2loss = tf.add_n([tf.nn.l2_loss(v) for v in vars]) * alpha
+    # L2loss = tf.add_n([tf.nn.l2_loss(v) for v in vars]) * alpha
+    vars = [weights_one_layer['h1'], weights_one_layer['out']]
+    # L2loss = tf.add_n([tf.nn.l2_loss(v) for v in vars]) * alpha_reg
+    L2loss = tf.multiply(alpha_reg, tf.add(tf.nn.l2_loss(weights_one_layer['h1']), tf.nn.l2_loss(weights_one_layer['out'])))
+
     # cost = tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=predictions, targets=y, pos_weight=classes_weights) + L2loss)
     # cost = tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=predictions, targets=y, pos_weight=FN_weights) + L2loss)
-    cost = FN_cost(predictions, y, L2loss, gamma, alpha)
+    cost = FN_cost(predictions, y, L2loss, tf.constant(gamma), alpha)
 
     optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
 
@@ -497,6 +529,7 @@ def tensorFlow(X, Y):
             # avg_cost = run_epoch2(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob)
             # avg_cost = run_epoch3(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_array)
             avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds)
+            # avg_cost = run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob, freq_frauds)
             if epoch % display_step == 0:
                 print("Epoch:", '%04d' % (epoch + 1), "cost=", \
                       "{:.9f}".format(avg_cost))
