@@ -219,13 +219,19 @@ def label_X(X_train, X_dev, X_test):
 
 # Calculates output of the NN. Effectively performs the forward computations
 # Implementation with a single layer
-def multilayer_perceptron_one_layer(x, weights, biases, keep_prob):
-    layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
-    layer_1 = tf.nn.relu(layer_1)
-    layer_1 = tf.nn.dropout(layer_1, keep_prob)
-    out_layer = tf.matmul(layer_1, weights['out']) + biases['out']
-    out_layer = tf.sigmoid(out_layer)
-    return out_layer
+def multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes, keep_prob):
+    with tf.name_scope ('Hidden_layer') as scope:
+        weights_h1 = tf.Variable(tf.random_normal([n_input, n_hidden_1]), name='Weights')
+        bias_h1 = tf.Variable(tf.random_normal([n_hidden_1]), name='Bias')
+        layer_1 = tf.add(tf.matmul(x, weights_h1), bias_h1)
+        layer_1 = tf.nn.relu(layer_1)
+        layer_1 = tf.nn.dropout(layer_1, keep_prob)
+    with tf.name_scope('Output_layer') as scope:
+        weights_out = tf.Variable(tf.random_normal([n_hidden_1, n_classes]), name='Weights')
+        bias_out = tf.Variable(tf.random_normal([n_classes]), name='Bias')
+        out_layer = tf.add(tf.matmul(layer_1, weights_out), bias_out)
+        out_layer = tf.sigmoid(out_layer)
+        return out_layer, weights_h1, weights_out
 
 def encode(series):
   return pandas.get_dummies(series.astype(str))
@@ -260,18 +266,19 @@ def sample_batches(X, Y, batch_size, prob_of_fraud):
 
     return X_batches, Y_batches
 
-def run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob, freq_frauds):
+def run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob, freq_frauds, writer, epoch, merged_summary_op):
     avg_cost = 0.0
     total_batch = int(len(X_train) / batch_size)
     x_batches, y_batches = sample_batches(X_train, Y_traintemp, batch_size, freq_frauds)
     for i in range(total_batch):
         batch_x, batch_y = x_batches[i], y_batches[i]
-        _, c = sess.run([optimizer, cost],
-                        feed_dict={
-                            x: batch_x,
-                            y: batch_y,
-                            keep_prob: 0.8
-                        })
+        _, c, summary = sess.run([optimizer, cost, merged_summary_op],
+                            feed_dict={
+                                x: batch_x,
+                                y: batch_y,
+                                keep_prob: 0.8
+                            })
+        writer.add_summary(summary, epoch * total_batch + i)
         avg_cost += c / total_batch
     return avg_cost
 
@@ -284,26 +291,23 @@ def filter_out_columns(X, columns_to_keep):
     return np.transpose(X_filtered)
 
 def FN_cost(predictions, targets, L2loss, gamma, alpha):
-    temp = tf.subtract(tf.constant(1.0), predictions)
-    temp = tf.pow(temp, gamma)
-    temp = tf.multiply(temp, targets)
-    temp = tf.multiply(temp, tf.constant(alpha[1]))
-    temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
-    temp = tf.multiply(temp, tf.constant(-1.0))
+        temp = tf.subtract(tf.constant(1.0), predictions)
+        temp = tf.pow(temp, gamma)
+        temp = tf.multiply(temp, targets)
+        temp = tf.multiply(temp, tf.constant(alpha[1]))
+        temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
+        temp = tf.multiply(temp, tf.constant(-1.0))
+        temp2 = tf.pow(predictions, gamma)
+        temp2 = tf.multiply(temp2, tf.constant(alpha[0]))
+        temp2 = tf.multiply(temp2, tf.subtract(tf.constant(1.0), targets))
+        temp3 = tf.clip_by_value(tf.subtract(tf.constant(1.0), predictions),1e-10,1.0)
+        temp2 = tf.multiply(temp2, tf.log(temp3))
+        temp2 = tf.multiply(temp2, tf.constant(-1.0))
+        cost = tf.add(temp, temp2)
+        cost = tf.add(cost, L2loss)
 
-    temp2 = tf.pow(predictions, gamma)
-    temp2 = tf.multiply(temp2, tf.constant(alpha[0]))
-    temp2 = tf.multiply(temp2, tf.subtract(tf.constant(1.0), targets))
-    temp3 = tf.clip_by_value(tf.subtract(tf.constant(1.0), predictions),1e-10,1.0)
-    temp2 = tf.multiply(temp2, tf.log(temp3))
-    temp2 = tf.multiply(temp2, tf.constant(-1.0))
+        return tf.reduce_mean(cost)
 
-    cost = tf.add(temp, temp2)
-    cost = tf.add(cost, L2loss)
-
-    return tf.reduce_mean(cost)
-
-# https://medium.com/@curiousily/tensorflow-for-hackers-part-ii-building-simple-neural-network-2d6779d2f91b
 def tensorFlow(X, Y):
     X, Y = filter_refused_transactions(X, Y)
     X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
@@ -324,7 +328,7 @@ def tensorFlow(X, Y):
     batch_size = 5000
     tolerance = 1e-2
     learning_rate = 0.05 #baseline: 0.05
-    alpha_reg = 0.001 #baseline: 0.001
+    alpha_reg = 0.002 #baseline: 0.002
     gamma = 2.0 #baseline: 2
 
     freq_frauds = 0.5 #baseline: 0.5
@@ -336,44 +340,48 @@ def tensorFlow(X, Y):
     n_classes = Y_traintemp.shape[1]
 
 
+    with tf.variable_scope('Inputs') as scope:
+        keep_prob = tf.placeholder("float", name="Keep_prob")
+        x = tf.placeholder("float", [None, n_input], name="X")
 
-    weights_one_layer = {
-        'h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
-        'out': tf.Variable(tf.random_normal([n_hidden_1, n_classes]))
-    }
+    with tf.variable_scope('Labels') as scope:
+        y = tf.placeholder("float", [None, n_classes])
 
-    biases_one_layer = {
-        'b1': tf.Variable(tf.random_normal([n_hidden_1])),
-        'out': tf.Variable(tf.random_normal([n_classes]))
-    }
-
-    keep_prob = tf.placeholder("float")
-
-
-    x = tf.placeholder("float", [None, n_input])
-    y = tf.placeholder("float", [None, n_classes])
-
-    predictions = multilayer_perceptron_one_layer(x, weights_one_layer, biases_one_layer, keep_prob)
+    # with tf.variable_scope('Perceptron') as scope:
+    predictions, weights_h1, weights_out = multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes, keep_prob)
 
     weights_fraud = 1/freq_frauds
     weight_settled = 1/(1-freq_frauds)
-
     alpha = [np.float32(weights_fraud), np.float32(weight_settled)]
-    vars = [weights_one_layer['h1'], weights_one_layer['out']]
-    L2loss = tf.multiply(alpha_reg, tf.add(tf.nn.l2_loss(weights_one_layer['h1']), tf.nn.l2_loss(weights_one_layer['out'])))
-    cost = FN_cost(predictions, y, L2loss, tf.constant(gamma), alpha)
 
-    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
-    display_step = 1
+
+    with tf.name_scope('Analysis') as scope:
+
+        with tf.name_scope('Focal_loss') as scope:
+            L2loss = tf.multiply(alpha_reg, tf.add(tf.nn.l2_loss(weights_h1), tf.nn.l2_loss(weights_out)), name='Reg_term')
+            cost = FN_cost(predictions, y, L2loss, tf.constant(gamma), alpha)
+
+        display_step = 1
+
+        with tf.name_scope('Accuracy') as scope:
+            correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
+            overall_accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+
+
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate, name="Optimizer").minimize(cost)
+
+    tf.summary.scalar("cost", cost)
+    tf.summary.scalar("overall_accuracy", overall_accuracy)
+    merged_summary_op = tf.summary.merge_all()
 
     with tf.Session() as sess:
+        summary_writer = tf.summary.FileWriter('logs', graph=tf.get_default_graph())
         sess.run(tf.global_variables_initializer())
 
         prev_cost = 0.0
         epoch = 0
-        writer = tf.summary.FileWriter('logs', sess.graph)
         while(True):
-            avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds)
+            avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds, summary_writer, epoch, merged_summary_op)
             if epoch % display_step == 0:
                 print("Epoch:", '%04d' % (epoch + 1), "cost=", \
                       "{:.9f}".format(avg_cost))
@@ -383,16 +391,15 @@ def tensorFlow(X, Y):
                 prev_cost = avg_cost
                 epoch += 1
         print("Optimization Finished!")
-        correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
-        accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-        writer.close()
-        print("Training Accuracy:", accuracy.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0}))
+        # correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
+        # accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+        print("Training Accuracy:", overall_accuracy.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0}))
         results = correct_prediction.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0})
         test3(results, Y_train, "NN", 'Train')
         results = correct_prediction.eval({x: X_dev, y: encode(Y_dev), keep_prob: 1.0})
         test3(results, Y_dev, "NN", 'Dev')
 
-
+    summary_writer.close()
 
 
 # Main method
@@ -402,3 +409,8 @@ def main():
     return
 
 main()
+
+#  Tensorboard:
+# 1. cmd
+# 2. cd C:\Users\djhof\AppData\Local\Programs\Python\Python35\Lib\site-packages\tensorboard
+# 2. python main.py --logdir=C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\logs
