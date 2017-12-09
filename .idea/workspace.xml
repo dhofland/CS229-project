@@ -2,12 +2,170 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887ed679-03c8-44a2-b380-37e034b7b182" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow-test5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow-test6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_wrapper.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512444778.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow-test4.py" afterPath="$PROJECT_DIR$/tensorflow-test4.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512595262.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512597923.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598026.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598063.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598099.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598187.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598382.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598456.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598616.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598710.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598789.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598926.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599016.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599092.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599193.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599242.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599284.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599328.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599491.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599574.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599775.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599981.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600047.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600069.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600118.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600142.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600182.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600374.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600454.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600480.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600565.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600741.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600773.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600931.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601163.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601268.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601301.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601485.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601518.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601571.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601653.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601688.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601722.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601777.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601823.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601863.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601921.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601970.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601999.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602026.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602052.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602123.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602165.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602195.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602226.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602308.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602336.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602412.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602478.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602508.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602593.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602625.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512773883.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774023.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774062.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774239.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774297.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774441.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774589.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774601.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512775239.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776184.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776242.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776267.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776291.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776319.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776563.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776635.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776844.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776924.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777104.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777162.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777201.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777219.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777273.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777334.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777426.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777718.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777728.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777784.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777794.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777873.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777881.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777889.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777930.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777938.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778116.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778173.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778289.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778569.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778577.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778601.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778645.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778705.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778813.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778924.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778937.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778977.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778990.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779006.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779034.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779065.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779123.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779130.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779152.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779180.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779217.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779270.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779332.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780005.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780021.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780038.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780057.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780079.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780117.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780132.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780151.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780175.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780208.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780241.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780329.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780395.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780531.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780626.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780668.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780701.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780875.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780912.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780989.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781005.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781024.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781090.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781106.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781124.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781148.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781164.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781181.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781311.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781327.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781343.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781385.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781397.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781409.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781481.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781495.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781511.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781568.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781585.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781605.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785813.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785831.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785853.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785879.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785906.DESKTOP-QCVL1P5" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -284,9 +442,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16380237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16380237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36402568" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4914071" order="1" side_tool="false" content_ui="tabs" />
