@@ -1,6 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas
+import sklearn
+import tensorflow as tf
+from sklearn import preprocessing, linear_model, neural_network, utils
+from sklearn.preprocessing import StandardScaler, PolynomialFeatures
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas
 import math
 import sklearn
 import tensorflow as tf
@@ -10,7 +18,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn import preprocessing, linear_model, neural_network
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.manifold import TSNE
-
 
 # Splits the data according to their label.
 # Returns Y where 1 represents a chargeback transaction, 0 a settled transaction and -1 a refused transaction.
@@ -115,25 +122,6 @@ def label(le, X):
             X[i] = temp
     return np.transpose(X)
 
-# Test method for new labeling scheme (with settled = -1; chargeback = 1
-def test2(prediction, Y, model_type, set_type):
-    mistakes = sum([1 for i, j in zip(prediction, Y) if i != j])
-    fraud_found = sum([1 for i, j in zip(prediction, Y) if i == j and i == 1])
-    total_fraud = sum([1 for i in Y if i == 1])
-    non_fraud_found = sum([1 for i, j in zip(prediction, Y) if i == j and i == -1])
-    total_non_fraud = sum([1 for i in Y if i == -1])
-    accuracy = (1 - (mistakes / len(Y))) * 100
-    fraud_found = (fraud_found / total_fraud) * 100
-
-    non_fraud_found = (non_fraud_found / total_non_fraud) * 100
-
-    print(
-        model_type + ": " + set_type + ": accuracy: %f%%; fraud classification accuracy: %f%%; non-fraud classification accuracy: %f%%"
-        % (accuracy, fraud_found, non_fraud_found))
-    return accuracy, fraud_found, non_fraud_found
-
-
-
 # Filters all but specified columns from X
 def filter_out_columns(X, columns_to_keep):
     X = np.transpose(X)
@@ -143,7 +131,7 @@ def filter_out_columns(X, columns_to_keep):
     return np.transpose(X_filtered)
 
 
-
+#Scales the input features
 def scale(X_train, X_dev, X_test):
     scaler = StandardScaler()
     scaler.fit(X_train)
@@ -183,7 +171,8 @@ def split_train_dev_test(X, Y, train_size, dev_size):
 
     return X_train, Y_train, X_dev, Y_dev, X_test, Y_test
 
-def test3(prediction, Y, model_type, set_type):
+# Computes the prediction accuracy for overall, frauds and non-frauds
+def compute_accuracy(prediction, Y, model_type, set_type):
     fraud_found = 0
     non_fraud_found = 0
 
@@ -211,6 +200,7 @@ def test3(prediction, Y, model_type, set_type):
 seed = 128
 rng = np.random.RandomState(seed)
 
+# Labels the input features
 def label_X(X_train, X_dev, X_test):
     le = preprocessing.LabelEncoder()
     X_train = label(le, X_train)
@@ -221,14 +211,13 @@ def label_X(X_train, X_dev, X_test):
 
 # Calculates output of the NN. Effectively performs the forward computations
 # Implementation with a single layer
-def multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes, keep_prob):
+def multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes):
     name_hidden_layer = "H1_n" + str(n_hidden_1)
     with tf.name_scope (name_hidden_layer) as scope:
         weights_h1 = tf.Variable(tf.random_normal([n_input, n_hidden_1]), name='Weights')
         bias_h1 = tf.Variable(tf.random_normal([n_hidden_1]), name='Bias')
         layer_1 = tf.add(tf.matmul(x, weights_h1), bias_h1)
         layer_1 = tf.nn.relu(layer_1)
-        layer_1 = tf.nn.dropout(layer_1, keep_prob)
     with tf.name_scope('Output_layer') as scope:
         weights_out = tf.Variable(tf.random_normal([n_hidden_1, n_classes]), name='Weights')
         bias_out = tf.Variable(tf.random_normal([n_classes]), name='Bias')
@@ -246,7 +235,7 @@ def sample_batches(X, Y, batch_size, prob_of_fraud):
     fraud_indices_list = np.where(Y == -1)[0]
     non_fraud_indices_list = np.where(Y == 1)[0]
 
-    num_frauds = round(prob_of_fraud * batch_size)
+    num_frauds = int(round(prob_of_fraud * batch_size))
     num_non_frauds = batch_size - num_frauds
 
     total_batch = int(len(non_fraud_indices_list) / num_non_frauds)
@@ -255,8 +244,6 @@ def sample_batches(X, Y, batch_size, prob_of_fraud):
 
     X_batches = []
     Y_batches = []
-
-    # non_fraud_indices = np.array_split(non_fraud_indices_list, total_batch)
 
     for i in range(number_batches):
         fraud_indices = np.random.choice(fraud_indices_list, num_frauds)
@@ -269,7 +256,8 @@ def sample_batches(X, Y, batch_size, prob_of_fraud):
 
     return X_batches, Y_batches
 
-def run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, keep_prob, freq_frauds, writer, epoch, merged_summary_op):
+# Runs a single training-epoch
+def run_epoch(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, freq_frauds, writer, epoch, merged_summary_op):
     avg_cost = 0.0
     total_batch = int(len(X_train) / batch_size)
     x_batches, y_batches = sample_batches(X_train, Y_traintemp, batch_size, freq_frauds)
@@ -278,8 +266,7 @@ def run_epoch4(sess, X_train, batch_size, Y_traintemp, optimizer, cost, x, y, ke
         _, c, summary = sess.run([optimizer, cost, merged_summary_op],
                             feed_dict={
                                 x: batch_x,
-                                y: batch_y,
-                                keep_prob: 0.8
+                                y: batch_y
                             })
         writer.add_summary(summary, epoch * total_batch + i)
         avg_cost += c / total_batch
@@ -293,103 +280,66 @@ def filter_out_columns(X, columns_to_keep):
         X_filtered.append(X[i])
     return np.transpose(X_filtered)
 
-def FN_cost(predictions, targets, L2loss, gamma, alpha):
-        # temp = tf.subtract(tf.constant(1.0), predictions)
-        temp = predictions
-        temp = tf.pow(temp, gamma)
-        temp = tf.multiply(temp, targets)
-        temp = tf.multiply(temp, tf.constant(alpha[1]))
-        temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
-        temp = tf.multiply(temp, tf.constant(-1.0))
-        # temp2 = tf.pow(predictions, gamma)
-        temp2 = tf.pow(tf.subtract(tf.constant(1.0), predictions), gamma)
-        temp2 = tf.multiply(temp2, tf.constant(alpha[0]))
-        temp2 = tf.multiply(temp2, tf.subtract(tf.constant(1.0), targets))
-        temp3 = tf.clip_by_value(tf.subtract(tf.constant(1.0), predictions),1e-10,1.0)
-        temp2 = tf.multiply(temp2, tf.log(temp3))
-        temp2 = tf.multiply(temp2, tf.constant(-1.0))
-        cost = tf.add(temp, temp2)
-        cost = tf.add(cost, L2loss)
+# Focal loss function
+def focalLoss(predictions, targets, L2loss, gamma, alpha):
+    temp = tf.subtract(tf.constant(1.0), predictions)
+    temp = tf.pow(temp, gamma)
+    temp = tf.multiply(temp, targets)
+    temp = tf.multiply(temp, tf.constant(alpha[1]))
+    temp = tf.multiply(temp, tf.log(tf.clip_by_value(predictions,1e-10,1.0)))
+    temp = tf.multiply(temp, tf.constant(-1.0))
 
-        return tf.reduce_mean(cost)
+    temp2 = tf.pow(predictions, gamma)
+    temp2 = tf.multiply(temp2, tf.constant(alpha[0]))
+    temp2 = tf.multiply(temp2, tf.subtract(tf.constant(1.0), targets))
+    temp3 = tf.clip_by_value(tf.subtract(tf.constant(1.0), predictions),1e-10,1.0)
+    temp2 = tf.multiply(temp2, tf.log(temp3))
+    temp2 = tf.multiply(temp2, tf.constant(-1.0))
 
+    cost = tf.add(temp, temp2)
+    cost = tf.add(cost, L2loss)
 
-def plot_with_labels(lowDWeights, labels, filename='tsne.png'):
-    assert lowDWeights.shape[0] >= len(labels), "More labels than weights"
-    plt.figure(figsize=(20, 20))  #in inches
-    for i, label in enumerate(labels):
-        x, y = lowDWeights[i,:]
-        plt.scatter(x, y)
-        plt.annotate(label,
-                 xy=(x, y),
-                 xytext=(5, 2),
-                 textcoords='offset points',
-                 ha='right',
-                 va='bottom')
+    return tf.reduce_mean(cost)
 
-    plt.savefig(filename)
-
-def tensorFlow(X, Y):
+# Our tensorflow neural network implementation
+def neuralNetwork(X, Y, batch_size, tolerance, learning_rate, alpha_reg, gamma, freq_frauds, n_hidden_1, it):
     X, Y = filter_refused_transactions(X, Y)
     X_train, Y_train, X_dev, Y_dev, X_test, Y_test = split_train_dev_test(X, Y, 0.7, 0.15)
     X_train, X_dev, X_test = label_X(X_train, X_dev, X_test)
     X_train, X_dev, X_test = scale(X_train, X_dev, X_test)
-
     X_train = filter_out_columns(X_train, [2, 3, 14, 16])
     X_dev = filter_out_columns(X_dev, [2,3,14,16])
-
-    # poly = PolynomialFeatures(2)
-    # X_train = poly.fit_transform(X_train)
-    # X_dev = poly.fit_transform(X_dev)
-
     Y_traintemp =  encode(Y_train)
 
-    ###########################################
-    ########## Variables to optimise ##########
-    ###########################################
-    batch_size = 10000      #baseline: 5000
-    tolerance = 1e-2        #baseline: 1e-2
-    learning_rate = 0.05    #baseline: 0.05
-    alpha_reg = 0.001       #baseline: 0.002
-    gamma = 1.0             #baseline: 2
-    freq_frauds = 0.5       #baseline: 0.5
-    n_hidden_1 = 300        #baseline: 500
-    ###########################################
-    ###########################################
-
-    (m, n) = X_train.shape
     n_input = X_train.shape[1]
     n_classes = Y_traintemp.shape[1]
 
-    with tf.variable_scope('Inputs') as scope:
-        keep_prob = tf.placeholder("float", name="Keep_prob")
-        x = tf.placeholder("float", [None, n_input], name="X")
+    if (it == 0):
+        with tf.variable_scope('Inputs') as scope:
+            global x
+            x = tf.placeholder("float", [None, n_input], name="X")
 
-    with tf.variable_scope('Labels') as scope:
-        y = tf.placeholder("float", [None, n_classes])
+        with tf.variable_scope('Labels') as scope:
+            global y
+            y = tf.placeholder("float", [None, n_classes])
 
-    # with tf.variable_scope('Perceptron') as scope:
-    predictions, weights_h1, weights_out = multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes, keep_prob)
+    predictions, weights_h1, weights_out = multilayer_perceptron_one_layer(x,n_input, n_hidden_1, n_classes)
 
-    weights_fraud = 1/freq_frauds
-    weight_settled = 1/(1-freq_frauds)
+    weights_fraud = freq_frauds
+    weight_settled = (1 - freq_frauds)
     alpha = [np.float32(weights_fraud), np.float32(weight_settled)]
-
-
-    # with tf.name_scope('Analysis') as scope:
 
     with tf.name_scope('Focal_loss') as scope:
         L2loss = tf.multiply(alpha_reg, tf.add(tf.nn.l2_loss(weights_h1), tf.nn.l2_loss(weights_out)), name='Reg_term')
-        cost = FN_cost(predictions, y, L2loss, tf.constant(gamma), alpha)
+        cost = focalLoss(predictions, y, L2loss, tf.constant(gamma), alpha)
 
-        display_step = 1
 
     with tf.name_scope('Accuracy') as scope:
         correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
         overall_accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
 
-    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate, name="Optimizer").minimize(cost)
+    optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate, name="Optimizer").minimize(cost)
 
     tf.summary.scalar("cost", cost)
     tf.summary.scalar("overall_accuracy", overall_accuracy)
@@ -401,10 +351,11 @@ def tensorFlow(X, Y):
 
         prev_cost = 0.0
         epoch = 0
+        display_step = 1
         while(True):
-            avg_cost = run_epoch4(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, keep_prob, freq_frauds, summary_writer, epoch, merged_summary_op)
+            avg_cost = run_epoch(sess, X_train, batch_size, Y_train, optimizer, cost, x, y, freq_frauds, summary_writer, epoch, merged_summary_op)
             if epoch % display_step == 0:
-                print("Epoch:", '%04d' % (epoch + 1), "cost=", \
+                print("Epoch:", '%04d' % (epoch + 1), "cost=",
                       "{:.9f}".format(avg_cost))
             if (abs((avg_cost - prev_cost) / avg_cost) <= tolerance):
                 break
@@ -412,25 +363,59 @@ def tensorFlow(X, Y):
                 prev_cost = avg_cost
                 epoch += 1
         print("Optimization Finished!")
-        print("Training Accuracy:", overall_accuracy.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0}))
-        results = correct_prediction.eval({x: X_train, y: Y_traintemp, keep_prob: 1.0})
-        test3(results, Y_train, "NN", 'Train')
-        results = correct_prediction.eval({x: X_dev, y: encode(Y_dev), keep_prob: 1.0})
-        test3(results, Y_dev, "NN", 'Dev')
+        correct_prediction = tf.equal(tf.argmax(predictions, 1), tf.argmax(y, 1))
+        accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+        summary_writer.close()
+        print("Training Accuracy:", accuracy.eval({x: X_train, y: Y_traintemp}))
+        results = correct_prediction.eval({x: X_train, y: Y_traintemp})
+        acc_train, fraud_train, non_fraud_train = compute_accuracy(results, Y_train, "NN", 'Train')
+        results = correct_prediction.eval({x: X_dev, y: encode(Y_dev)})
+        acc_dev, fraud_dev, non_fraud_dev = compute_accuracy(results, Y_dev, "NN", 'Dev')
 
-        final_weights = weights_h1.eval(session=sess)
-        tsne = TSNE(perplexity=100, n_components=2, init='pca', n_iter=5000)
-        lowDWeights = tsne.fit_transform(final_weights)
-        labels = ['fraud', 'non-fraud']
-        plot_with_labels(lowDWeights, labels)
+    return acc_train, fraud_train, non_fraud_train, acc_dev, fraud_dev, non_fraud_dev
 
-
-    summary_writer.close()
 
 # Main method
 def main():
     X, Y = read_data()
-    tensorFlow(X, Y)
+    # Meta-parameters #
+    #########################
+    batch_size = 1000           #baseline: 1000
+    tolerance = 1e-2            #baseline: 1e-2
+    learning_rate = 5.          #baseline: 5.
+    alpha_reg = 0.001           #baseline: 0.001
+    gamma = 2.                  #baseline: 2
+    freq_frauds = 0.45          #baseline: 0.45
+    n_hidden_1 = 500            #baseline: 500
+    #########################
+
+    avg_acc_train = 0.0
+    avg_fraud_train = 0.0
+    avg_nofraud_train = 0.0
+    avg_acc_dev = 0.0
+    avg_fraud_dev = 0.0
+    avg_nofraud_dev = 0.0
+
+    iterate = 5
+
+    for i in range(iterate):
+        acc_train, fraud_train, non_fraud_train, acc_dev, fraud_dev, non_fraud_dev = neuralNetwork(
+            X, Y, batch_size,tolerance,learning_rate,alpha_reg,gamma,freq_frauds,n_hidden_1, i)
+        avg_acc_train = avg_acc_train + acc_train
+        avg_fraud_train = avg_fraud_train + fraud_train
+        avg_nofraud_train = avg_nofraud_train + non_fraud_train
+        avg_acc_dev = avg_acc_dev + acc_dev
+        avg_fraud_dev = avg_fraud_dev + fraud_dev
+        avg_nofraud_dev = avg_nofraud_dev + non_fraud_dev
+
+    print("")
+    print("Average train accuracy:",avg_acc_train/iterate*100)
+    print("Average fraud train accuracy:", avg_fraud_train/iterate)
+    print("Average non-fraud train accuracy:", avg_nofraud_train/iterate)
+    print("")
+    print("Average dev accuracy:",avg_acc_dev/iterate*100)
+    print("Average fraud dev accuracy:", avg_fraud_dev/iterate)
+    print("Average non-fraud dev accuracy:", avg_nofraud_dev/iterate)
     return
 
 main()
