@@ -2,170 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887ed679-03c8-44a2-b380-37e034b7b182" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512595262.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512597923.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598026.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598063.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598099.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598187.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598382.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598456.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598616.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598710.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598789.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512598926.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599016.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599092.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599193.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599242.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599284.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599328.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599491.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599574.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599775.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512599981.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600047.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600069.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600118.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600142.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600182.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600374.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600454.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600480.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600565.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600741.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600773.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512600931.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601163.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601268.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601301.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601485.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601518.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601571.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601653.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601688.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601722.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601777.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601823.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601863.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601921.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601970.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512601999.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602026.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602052.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602123.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602165.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602195.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602226.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602308.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602336.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602412.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602478.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602508.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602593.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512602625.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512773883.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774023.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774062.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774239.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774297.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774441.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774589.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512774601.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512775239.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776184.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776242.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776267.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776291.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776319.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776563.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776635.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776844.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512776924.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777104.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777162.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777201.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777219.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777273.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777334.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777426.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777718.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777728.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777784.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777794.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777873.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777881.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777889.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777930.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512777938.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778116.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778173.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778289.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778569.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778577.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778601.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778645.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778705.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778813.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778924.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778937.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778977.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512778990.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779006.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779034.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779065.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779123.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779130.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779152.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779180.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779217.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779270.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512779332.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780005.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780021.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780038.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780057.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780079.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780117.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780132.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780151.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780175.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780208.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780241.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780329.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780395.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780531.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780626.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780668.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780701.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780875.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780912.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512780989.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781005.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781024.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781090.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781106.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781124.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781148.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781164.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781181.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781311.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781327.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781343.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781385.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781397.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781409.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781481.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781495.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781511.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781568.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781585.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512781605.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785813.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785831.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785853.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785879.DESKTOP-QCVL1P5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512785906.DESKTOP-QCVL1P5" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Final version.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SVM_filtered_thetas.png" afterPath="$PROJECT_DIR$/Outdated/SVM_filtered_thetas.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_thetas.png" afterPath="$PROJECT_DIR$/Outdated/logistic_thetas.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_thetas_balanced.png" afterPath="$PROJECT_DIR$/Outdated/logistic_thetas_balanced.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_thetas_unweighted.png" afterPath="$PROJECT_DIR$/Outdated/logistic_thetas_unweighted.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_thetas_weighted.png" afterPath="$PROJECT_DIR$/Outdated/logistic_thetas_weighted.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_thetas_weighted_filtered.png" afterPath="$PROJECT_DIR$/Outdated/logistic_thetas_weighted_filtered.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/naive_bayes_posteriors.png" afterPath="$PROJECT_DIR$/Outdated/naive_bayes_posteriors.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test2.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test2.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test3.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test3.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test4.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test4.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test5.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test5.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow-test6.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow-test6.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tensorflow_wrapper.py" afterPath="$PROJECT_DIR$/Outdated/tensorflow_wrapper.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tsne.png" afterPath="$PROJECT_DIR$/Outdated/tsne.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/v1.py" afterPath="$PROJECT_DIR$/Outdated/v1.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/v2.py" afterPath="$PROJECT_DIR$/Outdated/v2.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/v3.py" afterPath="$PROJECT_DIR$/Outdated/v3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -177,10 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="tensorflow-test5.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow-test5.py">
+        <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="397" column="46" lean-forward="true" selection-start-line="368" selection-start-column="4" selection-end-line="397" selection-end-column="46" />
+            <state relative-caret-position="21">
+              <caret line="397" column="46" lean-forward="false" selection-start-line="368" selection-start-column="4" selection-end-line="397" selection-end-column="46" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#12934#13353#0" expanded="false" />
@@ -189,13 +45,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tensorflow-test6.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tensorflow-test6.py">
+      <file leaf-file-name="Final version.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Final version.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="383" column="16" lean-forward="true" selection-start-line="383" selection-start-column="16" selection-end-line="383" selection-end-column="16" />
+            <state relative-caret-position="987">
+              <caret line="129" column="25" lean-forward="false" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
               <folding>
-                <element signature="e#10147#10284#0" expanded="false" />
+                <element signature="e#821#1072#0" expanded="false" />
+                <element signature="e#9238#9392#0" expanded="false" />
+                <element signature="e#9501#9746#0" expanded="false" />
+                <element signature="e#9929#10124#0" expanded="false" />
+                <element signature="e#10217#10354#0" expanded="false" />
+                <element signature="e#10423#10620#0" expanded="false" />
+                <element signature="e#10811#11764#0" expanded="false" />
+                <element signature="e#11899#12691#0" expanded="false" />
+                <element signature="e#12808#12968#0" expanded="false" />
+                <element signature="e#13160#13899#0" expanded="false" />
+                <element signature="e#13923#13968#0" expanded="false" />
+                <element signature="e#14154#15027#0" expanded="false" />
+                <element signature="e#15189#15774#0" expanded="false" />
+                <element signature="e#15867#16004#0" expanded="false" />
+                <element signature="e#16091#16828#0" expanded="false" />
+                <element signature="e#16991#20166#0" expanded="false" />
+                <marker date="1513340358246" expanded="false" signature="1213:3411" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Outdated/v3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="185" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Outdated/v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="340" column="10" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="340" selection-end-column="10" />
+              <folding>
+                <element signature="e#13981#14934#0" expanded="false" />
+                <element signature="e#15002#18515#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plotter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2196">
+              <caret line="451" column="10" lean-forward="true" selection-start-line="378" selection-start-column="0" selection-end-line="451" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -212,8 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>(m,</find>
-      <find>polyn</find>
       <find>cross</find>
       <find>poly</find>
       <find>split</find>
@@ -242,6 +147,8 @@
       <find>keep_prob</find>
       <find>keep</find>
       <find>drop</find>
+      <find>test</find>
+      <find>simple</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,13 +161,14 @@
         <option value="$PROJECT_DIR$/v2.py" />
         <option value="$PROJECT_DIR$/tensorflow-test.py" />
         <option value="$PROJECT_DIR$/tensorflow-test2.py" />
-        <option value="$PROJECT_DIR$/v3.py" />
         <option value="$PROJECT_DIR$/tensorflow-test3.py" />
         <option value="$PROJECT_DIR$/tensorflow-test4.py" />
         <option value="$PROJECT_DIR$/tensorflow-final.py" />
         <option value="$PROJECT_DIR$/tensorflow-test5.py" />
         <option value="$PROJECT_DIR$/tensorflow_wrapper.py" />
         <option value="$PROJECT_DIR$/tensorflow-test6.py" />
+        <option value="$PROJECT_DIR$/v3.py" />
+        <option value="$PROJECT_DIR$/Final version.py" />
       </list>
     </option>
   </component>
@@ -288,8 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,6 +207,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,6 +216,9 @@
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python35/python.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\Outdated" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project" />
     </key>
@@ -337,7 +248,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS229-project" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow-test4.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\Outdated\tensorflow-test4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -354,7 +265,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS229-project" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow-test5.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\Outdated\tensorflow-test5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -371,7 +282,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS229-project" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow-test6.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\Outdated\tensorflow-test6.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -388,7 +299,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS229-project" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_wrapper.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\djhof\Documents\Studies\Stanford\CS229\Project\CS229-project\Outdated\tensorflow_wrapper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -443,23 +354,23 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16380237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1659506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36402568" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4914071" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14453961" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49570355" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34261242" sideWeight="0.4849624" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34261242" sideWeight="0.4849624" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21413276" sideWeight="0.4914071" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34261242" sideWeight="0.5150376" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34261242" sideWeight="0.5150376" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4914071" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -496,17 +407,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tensorflow-test2.py</url>
+          <url>file://$PROJECT_DIR$/Outdated/tensorflow-test2.py</url>
           <line>376</line>
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tensorflow-test5.py</url>
+          <url>file://$PROJECT_DIR$/Outdated/tensorflow-test5.py</url>
           <line>420</line>
           <option name="timeStamp" value="349" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tensorflow-test5.py</url>
+          <url>file://$PROJECT_DIR$/Outdated/tensorflow-test5.py</url>
           <line>368</line>
           <option name="timeStamp" value="352" />
         </line-breakpoint>
@@ -518,40 +429,12 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="355" />
+      <option name="time" value="356" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3127#3281#0" expanded="false" />
-            <element signature="e#3390#3635#0" expanded="false" />
-            <element signature="e#4390#4926#0" expanded="false" />
-            <element signature="e#5054#5753#0" expanded="false" />
-            <element signature="e#5877#6517#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3127#3281#0" expanded="false" />
-            <element signature="e#3390#3635#0" expanded="false" />
-            <element signature="e#4390#4926#0" expanded="false" />
-            <element signature="e#5054#5753#0" expanded="false" />
-            <element signature="e#5877#6517#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -572,7 +455,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -593,7 +476,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -607,12 +490,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_thetas_weighted.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/logistic_thetas_weighted.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naive_bayes_posteriors.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/naive_bayes_posteriors.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -624,7 +507,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -645,7 +528,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -694,7 +577,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_thetas.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/logistic_thetas.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -706,22 +589,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naive_bayes_posteriors.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/naive_bayes_posteriors.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_thetas_unweighted.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/logistic_thetas_unweighted.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_thetas_weighted.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/logistic_thetas_weighted.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_thetas_weighted_filtered.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/logistic_thetas_weighted_filtered.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -789,7 +672,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsne.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/tsne.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -801,20 +684,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVM_filtered_thetas.png">
+    <entry file="file://$PROJECT_DIR$/Outdated/SVM_filtered_thetas.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3198">
-          <caret line="365" column="35" lean-forward="false" selection-start-line="365" selection-start-column="35" selection-end-line="365" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test2.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3696">
           <caret line="166" column="10" lean-forward="false" selection-start-line="166" selection-start-column="4" selection-end-line="166" selection-end-column="10" />
@@ -830,7 +705,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test3.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
           <caret line="500" column="4" lean-forward="false" selection-start-line="500" selection-start-column="4" selection-end-line="502" selection-end-column="48" />
@@ -846,23 +721,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="425" column="0" lean-forward="true" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/sklearn/neural_network/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3738">
           <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
@@ -876,7 +742,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="384" column="8" lean-forward="false" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="8" />
@@ -890,27 +756,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="313" column="4" lean-forward="false" selection-start-line="313" selection-start-column="4" selection-end-line="313" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-final.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="341" column="0" lean-forward="false" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow-final.py" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="1301" column="0" lean-forward="false" selection-start-line="1301" selection-start-column="0" selection-end-line="1301" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test4.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="953">
           <caret line="382" column="48" lean-forward="true" selection-start-line="382" selection-start-column="48" selection-end-line="382" selection-end-column="48" />
@@ -933,22 +790,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="397" column="46" lean-forward="true" selection-start-line="368" selection-start-column="4" selection-end-line="397" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#12934#13353#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_wrapper.py">
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="303" column="31" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="303" selection-end-column="31" />
@@ -956,12 +801,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow-test6.py">
+    <entry file="file://$PROJECT_DIR$/plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="383" column="16" lean-forward="true" selection-start-line="383" selection-start-column="16" selection-end-line="383" selection-end-column="16" />
+        <state relative-caret-position="2196">
+          <caret line="451" column="10" lean-forward="true" selection-start-line="378" selection-start-column="0" selection-end-line="451" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Outdated/v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="340" column="10" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="340" selection-end-column="10" />
+          <folding>
+            <element signature="e#13981#14934#0" expanded="false" />
+            <element signature="e#15002#18515#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="389" column="29" lean-forward="true" selection-start-line="389" selection-start-column="29" selection-end-line="389" selection-end-column="29" />
           <folding>
             <element signature="e#10147#10284#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Outdated/tensorflow-test5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="397" column="46" lean-forward="false" selection-start-line="368" selection-start-column="4" selection-end-line="397" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#12934#13353#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Outdated/v3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="185" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Final version.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="987">
+          <caret line="129" column="25" lean-forward="false" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+          <folding>
+            <element signature="e#821#1072#0" expanded="false" />
+            <element signature="e#9238#9392#0" expanded="false" />
+            <element signature="e#9501#9746#0" expanded="false" />
+            <element signature="e#9929#10124#0" expanded="false" />
+            <element signature="e#10217#10354#0" expanded="false" />
+            <element signature="e#10423#10620#0" expanded="false" />
+            <element signature="e#10811#11764#0" expanded="false" />
+            <element signature="e#11899#12691#0" expanded="false" />
+            <element signature="e#12808#12968#0" expanded="false" />
+            <element signature="e#13160#13899#0" expanded="false" />
+            <element signature="e#13923#13968#0" expanded="false" />
+            <element signature="e#14154#15027#0" expanded="false" />
+            <element signature="e#15189#15774#0" expanded="false" />
+            <element signature="e#15867#16004#0" expanded="false" />
+            <element signature="e#16091#16828#0" expanded="false" />
+            <element signature="e#16991#20166#0" expanded="false" />
+            <marker date="1513340358246" expanded="false" signature="1213:3411" ph="..." />
           </folding>
         </state>
       </provider>
